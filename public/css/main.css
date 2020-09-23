@@ -230,7 +230,7 @@ ul li a {
 }
 
 ul li a:hover {
-    color: black;
+    color: yellow;
     font-weight: 700;
 }
 
