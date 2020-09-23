@@ -1,0 +1,17 @@
+[{
+        "email": "admin1@perpustakaan.id",
+        "password": "123456",
+        "nama": "Iqbal Sahrizal",
+        "alamat": "Karawang",
+        "noTelp": "08999171546",
+        "role": "admin"
+    },
+    {
+        "email": "admin2@perpustakaan.id",
+        "password": "987654",
+        "nama": "Yeska Haganta",
+        "alamat": "Jakarta",
+        "noTelp": "08454454545",
+        "role": "admin"
+    }
+]
