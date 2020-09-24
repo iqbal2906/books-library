@@ -1,15 +1,18 @@
 [{
         "judul": "Don Quixote",
+        "penulis": "Miguel de Cervantes",
         "tahunTerbit": "1650",
         "jumlahBuku": "13"
     },
     {
         "judul": "Harry Potter and The Sorcerer’s Stone",
+        "penulis": "J.K. Rowling",
         "tahunTerbit": "1997",
         "jumlahBuku": "9"
     },
     {
         "judul": "A Tale of Two Cities",
+        "penulis": "Charles Dickens",
         "tahunTerbit": "1859",
         "jumlahBuku": "3"
     }

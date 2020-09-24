@@ -12,6 +12,10 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.STRING
             },
+            penulis: {
+                allowNull: false,
+                type: Sequelize.STRING
+            },
             tahunTerbit: {
                 allowNull: false,
                 type: Sequelize.INTEGER

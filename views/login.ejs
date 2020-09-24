@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+        <header>
+            <div class="input">
+                <h1>Masuk</h1>
+                <form action="/users/login" method="POST">
+                    <div class="form-input">
+                        <input class="labelRegist" type="email" name="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-input">
+                        <input class="labelRegist" type="password" name="password" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-input">
+                        <input class="submit" type="submit" value="Masuk">
+                    </div class="form-input">
+                    <div>
+                        <a href="/users/register" class="btnSubmit">Belum punya akun? Daftar disini </a>
+                    </div>
+                </form>
+            </div>
+        </header>
+</body>
+
+</html>

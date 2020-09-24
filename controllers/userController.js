@@ -5,6 +5,13 @@ class UserController {
         res.render('register')
     }
 
+    static registered(req, res) {
+        let { email, password, password2, name, address, phone } = req.body
+
+        console.log({ email, password, password2, name, address, phone });
+
+    }
+
     static login(req, res) {
         res.render('login')
     }
@@ -12,7 +19,7 @@ class UserController {
     static success(req, res) {
         User.findAll()
             .then(data => {
-                res.render('dashboard', { data })
+                res.render('dashboard')
             })
             .catch(err => {
                 res.send(err)
