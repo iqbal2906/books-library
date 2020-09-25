@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <title>Masuk</title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 
 <body>
@@ -13,9 +13,18 @@
         <header>
             <div class="input">
                 <h1>Masuk</h1>
+                <ul>
+                    <% if (err != 'undefined') { %>
+                        <% for(let i in err.errors)  { %>
+                            <li style="list-style-type: none; color: red;">
+                                <%= err.errors[i].message %>
+                            </li>
+                            <% } %>
+                                <% } %>
+                </ul>
                 <form action="/users/login" method="POST">
                     <div class="form-input">
-                        <input class="labelRegist" type="email" name="email" id="email" placeholder="Email" required>
+                        <input class="labelRegist" type="text" name="username" id="username" placeholder="Username" required>
                     </div>
                     <div class="form-input">
                         <input class="labelRegist" type="password" name="password" id="password" placeholder="Password" required>

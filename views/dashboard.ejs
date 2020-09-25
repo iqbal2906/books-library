@@ -4,15 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <%- include('./partials/navbar.ejs') %>
-            <h1>Hello</h1>
+        <%- include('./partials/navbarDasboard.ejs') %>
+            <h1>Tambah Buku</h1>
+            <% if( user.role == 1) {%>
+                <form action="/books/add" method="POST" id="inputData">
+                    <div class="form-input">
+                        <label class="label" for="judul">Judul</label>
+                        <input class="fn" type="text" name="judul" placeholder="Judul">
+                    </div>
+                    <div class="form-input">
+                        <label class="label" for="penulis">Penulis</label>
+                        <input class="ln" type="text" name="penulis" placeholder="Penulis">
+                    </div>
+                    <div class="form-input">
+                        <label class="label" for="tahunTerbit">Tahun Terbit</label>
+                        <input class="birth_year" type="text" name="tahunTerbit" placeholder="1972">
+                    </div>
+                    <div class="form-input">
+                        <label class="label" for="jumlah">Jumlah Buku</label>
+                        <input class="phone" type="text" name="jumlahBuku" placeholder="Jumlah Buku">
+                    </div>
+                    <div class="form-submit">
+                        <input class="submit" type="Submit" value="Save">
+                        <a href="/movies" class="btn_href">Cancel</a>
+                    </div>
+                </form>
+                <% } else { %>
+                    <table style="margin-left:auto;margin-right:auto">
+                        <caption>
+                            <h1>List Buku yang di Pinjam</h1>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>Judul</th>
+                                <th>Penulis</th>
+                                <th>Tahun Terbit</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (let i = 0; i < books.length; i++) { %>
+                                <% if (books[i].status !== 'Dikembalikan') { %>
+                                    <tr>
+                                        <td>
+                                            <%= books[i].Book.judul %>
+                                        </td>
+                                        <td>
+                                            <%= books[i].Book.penulis %>
+                                        </td>
+                                        <td>
+                                            <%= books[i].Book.tahunTerbit %>
+                                        </td>
+                                        <td>
+                                            <a href="/books/return/<%= books[i].Book.id %>">Kembalikan</a>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                        <% } %>
+                                            <% } %>
+                        </tbody>
+                    </table>
     </header>
-
 </body>
 
 </html>

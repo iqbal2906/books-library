@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cast List Movie</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="main">
+            <ul style="display: flex; justify-content: center; list-style-type: none;">
+                <li>
+                    <a href="/" class="active" style="margin: 1rem;">Home</a>
+                    <a href="/users/dashboard/<%= user.username %>" class="active" style="margin: 1rem;">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+        <table style="margin-left:auto;margin-right:auto">
+            <caption>
+                <h1>List Buku</h1>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Judul</th>
+                    <th>Penulis</th>
+                    <th>Tahun Terbit</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0; i < books.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= books[i].judul %>
+                        </td>
+                        <td>
+                            <%= books[i].penulis %>
+                        </td>
+                        <td>
+                            <%= books[i].tahunTerbit %>
+                        </td>
+                        <td>
+                            <%= books[i].jumlahBuku %>
+                        </td>
+                        <td>
+                            <% if(user.role == 1) { %>
+                                <a href="/books/edit/<%= books[i].id %>">Edit</a>
+                                <a href="/books/delete/<%= books[i].id %>">Delete</a>
+                                <% } else { %>
+                                    <a href="/books/borrow/<%= books[i].id %>">Pinjam</a>
+                                    <% } %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </header>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Edit Movie Section</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+        <div class="input">
+            <h1>Edit book Section</h1>
+            <form action="/books/edit/<%= book.id %> " method="POST" id="inputData">
+                <div class="form-input">
+                    <label class="label" for="judul">Judul Buku</label>
+                    <input class="fn" type="text" name="judul" value="<%= book.judul %>">
+                </div>
+                <div class="form-input">
+                    <label class="label" for="penulis">Penulis</label>
+                    <input class="ln" type="text" name="penulis" value="<%= book.penulis %>">
+                </div>
+                <div class="form-input">
+                    <label class="label" for="tahunTerbit">Tahun terbit</label>
+                    <input class="tahunTerbit" type="text" name="tahunTerbit" value="<%= book.tahunTerbit %>">
+                </div>
+                <div class="form-input">
+                    <label class="label" for="jumlahBuku">Jumlah Buku</label>
+                    <input class="phone" type="text" name="jumlahBuku" value="<%= book.jumlahBuku %>">
+                </div>
+
+                <div class="form-submit">
+                    <input class="submit" type="Submit" value="Save">
+                    <a href="/books" class="btn_href">Cancel</a>
+                </div>
+            </form>
+        </div>
+</body>
+
+</html>

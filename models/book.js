@@ -11,10 +11,12 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
+            Book.belongsToMany(models.User, { through: models.Borrow })
         }
     };
     Book.init({
         judul: DataTypes.STRING,
+        penulis: DataTypes.STRING,
         tahunTerbit: DataTypes.INTEGER,
         jumlahBuku: DataTypes.INTEGER
     }, {

@@ -1,19 +1,13 @@
 [{
+        "username": "ibx29",
         "email": "admin1@perpustakaan.id",
         "password": "123456",
-        "password2": "123456",
-        "nama": "Iqbal Sahrizal",
-        "alamat": "Karawang",
-        "noTelp": "08999171546",
-        "role": "admin"
+        "role": 1
     },
     {
+        "username": "yeska",
         "email": "admin2@perpustakaan.id",
         "password": "987654",
-        "password2": "987654",
-        "nama": "Yeska Haganta",
-        "alamat": "Jakarta",
-        "noTelp": "08454454545",
-        "role": "admin"
+        "role": 1
     }
 ]

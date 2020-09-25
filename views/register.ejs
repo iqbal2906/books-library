@@ -4,24 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <title>Daftar</title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 
 <body>
     <%- include('./partials/navbar.ejs') %>
         <div class="input">
             <h1>Daftar</h1>
+            <ul>
+                <% if (err != 'undefined') { %>
+                    <% for(let i in err.errors)  { %>
+                        <li style="list-style-type: none; color: red;">
+                            <%= err.errors[i].message %>
+                        </li>
+                        <% } %>
+                            <% } %>
+            </ul>
             <form action="/users/register" method="POST">
                 <div class="form-input">
-                    <input class="labelRegist" type="text" name="name" id="name" placeholder="Nama" required>
-                    <input class="labelRegist" type="text" name="address" id="address" placeholder="Alamat" required>
-                    <input class="labelRegist" type="text" name="phone" id="phone" placeholder="Nomor Telepon" required>
-                </div>
-                <div class="form-input">
-                    <input class="labelRegist" type="email" name="email" id="email" placeholder="Email" required>
-                    <input class="labelRegist" type="password" name="password" id="password" placeholder="Password" required>
-                    <input class="labelRegist" type="password" name="password2" id="password2" placeholder="Konfirmasi Password" required>
+                    <input class="labelRegist" type="text" name="username" id="username" placeholder="Username">
+                    <input class="labelRegist" type="email" name="email" id="email" placeholder="Email">
+                    <input class="labelRegist" type="password" name="password" id="password" placeholder="Password">
+                    <input class="labelRegist" type="password" name="password2" id="password2" placeholder="Konfirmasi Password">
+
                 </div>
                 <div class="form-input">
                     <input class="submit" type="submit" value="Daftar">
